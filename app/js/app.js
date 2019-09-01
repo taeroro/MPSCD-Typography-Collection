@@ -139,7 +139,7 @@ for (let key in hex_arr) {
   let hex_div = document.createElement("div");
   let hex_p = document.createElement("p");
 
-  hex_p.innerHTML = obj.content;
+  // hex_p.innerHTML = obj.content;
   hex_p.setAttribute("class", "text");
   hex_div.appendChild(hex_p);
   hex_div.setAttribute("class", "hexagon");
