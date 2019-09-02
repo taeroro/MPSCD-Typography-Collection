@@ -18,16 +18,21 @@ body {
   justify-content: flex-end;
   overflow: hidden;
 }
-.icon-container {
+#icon-container {
   position: fixed;
   top: 30px;
   left: 40px;
 }
-.icon-container p {
+#icon-container p {
   font-size: 40px;
   font-family: "Righteous";
   color: #FFF;
   margin: 0;
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 #hexGrid {
   display: flex;
@@ -45,20 +50,27 @@ body {
   width: 50%;
   height: 100vh;
   margin: 0;
-  /*background-color: red;*/
-
+  padding-left: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#imgCanvas img {
-  max-height: 65%;
-  max-width: 90%;
+#img-container {
+  text-align: center;
 }
-#imgCanvas span {
+#imgCanvas #img-container img {
+  max-height: 65vh;
+  max-width: 45vw;
+}
+#imgCanvas span, #typed {
   color: #FFF;
-  /*font-family: 'Libre Barcode 39 Text', cursive;*/
   font-size: 24px;
+}
+#img-description {
+  max-width: 45vw;
+  color: #FFF;
+  font-size: 20px;
+  font-family: 'EB Garamond', serif;
 }
 
 /* Hexagon */

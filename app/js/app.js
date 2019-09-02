@@ -38,6 +38,7 @@ const hex_arr = [
   {
     'type': "img",
     'content': "/img/[1]C_QDN8hXkAIvXTg.jpg",
+    'description': "Helvetica / Neue Haas Grotesk - one of the world’s favorite typeface",
   },
   {
     'type': "text",
@@ -58,10 +59,12 @@ const hex_arr = [
   {
     'type': "img",
     'content': "/img/[4]5fed23482365aa146bf61c815253650f.jpg",
+    'description': "Egyptian Hieroglyphs - a cornerstone of ancient writing systems",
   },
   {
     'type': "img",
     'content': "/img/[2]Shang_dynasty_inscribed_scapula.jpg",
+    'description': "甲骨文 “Oracle bone script” - the origin of Chinese characters",
   },
   {
     'type': "text",
@@ -78,6 +81,7 @@ const hex_arr = [
   {
     'type': "img",
     'content': "/img/[3]5GGISTWGJU5C3H5QBXD36ILKJM.jpg",
+    'description': "Robert Palladino’s calligraphy at Reed College - what inspired Steve Jobs to design/apply wonderful typography to personal computers",
   },
   {
     'type': "text",
@@ -94,6 +98,7 @@ const hex_arr = [
   {
     'type': "img",
     'content': "/img/[5]comment_zHQhJePu2VYZKophPKxf68QgrAO5mUD1.jpg",
+    'description': "Blackletter - one variation of blackletter was the official typeface for Nazi, contribute to the reason why we stopped using this typeface",
   },
   {
     'type': "text",
@@ -181,6 +186,8 @@ for (let key in hex_arr) {
 
   if (obj.type === "img") {
     hex_img.src = obj.content;
+    console.log(obj.description);
+    hex_img.alt = obj.description;
     // img_lg.src = obj.content;
   }
 
@@ -205,23 +212,47 @@ for (let key in hex_arr) {
 
 
 let elementsArray = document.getElementsByClassName("hexLink");
+let elementClicked = false;
 for (elem of elementsArray) {
   elem.addEventListener("click", function(event) {
+    elementClicked = true;
+
     if (event.target.nodeName === "IMG") {
+      let img_con = document.getElementById("img-container");
+      img_con.style.display = "block";
+      img_con.style.opacity = "1";
+
       let img_lg = document.getElementById("img-lg");
       img_lg.src = event.target.src;
 
-      // console.log(event.target.nodeName);
+      let img_des = document.getElementById("img-description");
+      img_des.innerHTML = event.target.alt;
+
+      let typed_cursor = document.getElementsByClassName("typed-cursor");
+      typed_cursor[0].style.display = "none";
+      typed_cursor[0].style.opacity = "0";
+
+      let typed = document.getElementById("typed");
+      typed.style.display = "none";
+      typed.style.opacity = "0";
     }
-
-
-    // for (let key in hex_arr) {
-    //   var obj = hex_arr[key];
-    //   console.log(obj.content);
-    // }
   });
 }
 
-// elementsArray.forEach(function(elem) {
-//   elem.addEventListener("click", clickHandler);
-// });
+let icon_container = document.getElementById("icon-container");
+icon_container.addEventListener("click", function(event) {
+  let img_lg = document.getElementById("img-lg");
+  img_lg.src = "";
+
+  let img_con = document.getElementById("img-container");
+  img_con.style.display = "none";
+  img_con.style.opacity = "0";
+
+  let typed_cursor = document.getElementsByClassName("typed-cursor");
+  typed_cursor[0].style.display = "block";
+  typed_cursor[0].style.opacity = "1";
+
+  let typed = document.getElementById("typed");
+  typed.style.display = "block";
+  typed.style.opacity = "1";
+});
