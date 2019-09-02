@@ -3,9 +3,9 @@ body {
   margin: 0;
 
   /*background: linear-gradient(328deg, #246655, #7f59df, #47b5ff);
-  background-size: 600% 600%;*/
+  background-size: 600% 600%;
 
-  /*-webkit-animation: AnimationName 20s ease infinite;
+  -webkit-animation: AnimationName 20s ease infinite;
   -moz-animation: AnimationName 20s ease infinite;
   animation: AnimationName 20s ease infinite;*/
 }
@@ -17,6 +17,17 @@ body {
   align-items: center;
   justify-content: flex-end;
   overflow: hidden;
+}
+.icon-container {
+  position: fixed;
+  top: 30px;
+  left: 40px;
+}
+.icon-container p {
+  font-size: 40px;
+  font-family: "Righteous";
+  color: #FFF;
+  margin: 0;
 }
 #hexGrid {
   display: flex;
@@ -43,6 +54,11 @@ body {
 #imgCanvas img {
   max-height: 65%;
   max-width: 90%;
+}
+#imgCanvas span {
+  color: #FFF;
+  /*font-family: 'Libre Barcode 39 Text', cursive;*/
+  font-size: 24px;
 }
 
 /* Hexagon */
