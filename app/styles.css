@@ -21,19 +21,35 @@ body {
 #hexGrid {
   display: flex;
   flex-wrap: wrap;
-  width: 45%;
+  width: 50%;
   margin: 0;
   overflow: hidden;
   font-size: 15px;
   list-style-type: none;
 
-  transform: translateX(10%)
+  transform: translateX(10%);
 }
 
+#imgCanvas {
+  width: 50%;
+  height: 100vh;
+  margin: 0;
+  /*background-color: red;*/
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#imgCanvas img {
+  max-height: 65%;
+  max-width: 90%;
+}
+
+/* Hexagon */
 .hex {
   position: relative;
   visibility:hidden;
-  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
 }
 .hex::after{
   content:'';
@@ -87,10 +103,12 @@ body {
   width: 100%;
   padding: 5%;
   box-sizing:border-box;
-  background-color: rgba(0, 128, 128, 0.8);
+  /*background-color: rgba(0, 128, 128, 0.8);*/
+  background-color: #282828;
   font-weight: 300;
-  -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
-          transition:          transform .2s ease-out, opacity .3s ease-out;
+  /*-webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
+          transition:          transform .2s ease-out, opacity .3s ease-out;*/
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .hex h1 {
   bottom: 50%;
